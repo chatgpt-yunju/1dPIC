@@ -36,7 +36,7 @@ if hdiag.flag_field
    output.fieldsave(:,:,jdiag) = [f.ex, f.ey, f.ez, f.by-prm.by0, f.bz]';
 end
 if hdiag.flag_kspec
-   output.kspecsave(:,:,jdiag) = kspectr([f.ex(X2),f.ey(X2),f.ez(X2),f.by(X2)-by0,bz(X2)])';
+   output.kspecsave(:,:,jdiag) = kspectr([f.ex(X2),f.ey(X2),f.ez(X2),f.by(X2)-f.by0,f.bz(X2)])';
 end
 
 
@@ -46,7 +46,7 @@ end
 figure(hdiag.fig)
 
 %
-for l=1:length(prm.diagtype)
+for l=1:length(prm.diagtype)  %prm.diagtype在diagnos
    %axes(hdiag.axes(l))
    set(gcf,'CurrentAxes',hdiag.axes(l));
    hdiag.nplt = l; % plate number

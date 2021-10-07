@@ -46,9 +46,9 @@ end
 figure(hdiag.fig)
 
 %
-for l=1:length(prm.diagtype)
+for l=1:length(prm.diagtype)             %prm.diagtype在diagnostics_init.m中
    %axes(hdiag.axes(l))
-   set(gcf,'CurrentAxes',hdiag.axes(l));
+   set(gcf,'CurrentAxes',hdiag.axes(l)); %	创建笛卡尔坐标系  
    hdiag.nplt = l; % plate number
    
    type = prm.diagtype(l);
