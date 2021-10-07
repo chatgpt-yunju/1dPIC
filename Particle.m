@@ -35,7 +35,7 @@ classdef Particle < handle
                       phase = 2*pi*rand;            %随机粒子的相位
                       xx = xx+ prm.nx/prm.np(k);    %等间距分配每一个粒子
                    else
-                      phase = phase + 2*pi/nphase;  %？
+                      phase = phase + 2*pi/nphase;  %随机粒子相位角
                    end 
                
                    obj.x(i) = xx;                   %初始化粒子坐标
@@ -46,7 +46,7 @@ classdef Particle < handle
                       obj.x(i) = obj.x(i) - prm.slx;%保证粒子坐标在网格内
                    end
 
-                   uxi = prm.vpa(k)*randn + vdpa;           %粒子速度的平行分量+漂移速度的平行分量             
+                   uxi = prm.vpa(k)*randn + vdpa;           %第i个粒子速度的平行分量+漂移速度的平行分量             
                    uyi = prm.vpe(k)*randn + vdpe*cos(phase);  
                    uz  = prm.vpe(k)*randn + vdpe*sin(phase);
 
@@ -57,7 +57,7 @@ classdef Particle < handle
                    ux = costh*uxi - sinth*uyi;    %平行磁场方向的速度还是磁场方向  
                    uy = sinth*uxi + costh*uyi;    %？
 
-                   %?
+                   %?相对论效应？？
                    g = prm.cv /sqrt(prm.cs + ux*ux + uy*uy + uz*uz);
                    obj.vx(i) = ux*g;      
                    obj.vy(i) = uy*g;

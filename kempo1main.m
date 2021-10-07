@@ -22,3 +22,13 @@ if prm.iex  %control parameter for electrostatic option
    charge(particle, field, prm);
    poisson(field, prm);
 end
+
+%************main loop***********%
+jtime=0;
+jdiag=1;
+
+%-- diagnostics --
+hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
+
+
+
