@@ -9,23 +9,23 @@ cs = prm.cs;
 vx = particle.vx; vy = particle.vy; vz = particle.vz;
 x = particle.x;
 
-   %ren.x=prm.dx             %位移
+   %ren.x=prm.dx             %网格边长dx=1
    %ren.t=prm.dt/2           %半个步长  
    %ren.v=ren.x/ren.t
 switch n
    case 1
-      vv = vx*ren.v;   %
+      vv = vx*ren.v;   %？
    case 2
       vv = vy*ren.v;
    case 3
       vv = vz*ren.v;
 end
-xx = x*ren.x;
+xx = x*ren.x;%？
 
 if jdiag == 1
    hold on
    
-   mksize = 4+ceil(32/sqrt(npt));
+   mksize = 4+ceil(32/sqrt(npt));  
    
    if prm.icolor
       n2 = 0;
@@ -70,7 +70,7 @@ if jdiag == 1
    str={'Vx','Vy','Vz'};
    ylabel(str(n))
    
-   hdiag.plt(hdiag.nplt).hplot = hplot;
+   hdiag.plt(hdiag.nplt).hplot = hplot;%?
    
    
 else

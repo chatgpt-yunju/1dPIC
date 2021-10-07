@@ -27,8 +27,21 @@ end
 jtime=0;
 jdiag=1;
 
-%-- diagnostics --
-% hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
+%-- Diagnostics at initial time --
+hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
+if prm.nplot == 0  %nplot: number of output
+   return
+end
 
+% Time advance loop
+for jtime = 1:prm.ntime  %？时间间隔dt和总时间步数的选择
+    if prm.iex==2  %iex=2静电；iex=1电磁
+        rvelocity(particle, field, prm);
+        
+        
+    else
+        
+    end
+end
 
 

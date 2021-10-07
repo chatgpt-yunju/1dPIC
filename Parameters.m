@@ -4,11 +4,11 @@ classdef Parameters < handle
     properties
         %网格距
         dx double {mustBePositive}
-        %时间步
+        %时间间隔
         dt double {mustBePositive}
         %网格点数
         nx double {mustBePositive}
-        %粒子种类数  
+        %时间步数  
         ntime double {mustBeInteger,mustBePositive}
         % number of outputs
         nplot double {mustBeInteger, mustBePositive}

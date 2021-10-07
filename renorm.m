@@ -7,7 +7,7 @@ function [prm,ren]=renorm(prm)
    ren.b=1.0/ren.t          %半步长倒数 
    ren.j=ren.x/(ren.t^3)    %加速度/半个步长
    ren.r=1.0/(ren.t^2)      %
-   ren.g=(ren.x^2)/(ren.t^4)%
+   ren.s=(ren.x^2)/(ren.t^4)%
    
    prm.cv=prm.cv/ren.v
    prm.wc=prm.wc*ren.t
