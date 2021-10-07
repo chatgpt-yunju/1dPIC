@@ -69,4 +69,6 @@ function [hdiag,output]=diagnostics_init(prm)
           end
     end
 
+    axes(hdiag.axes(1))
+    hdiag.htitle = title(sprintf('Time: %5.3f/%5.3f',0,prm.ntime*prm.dt));
 end

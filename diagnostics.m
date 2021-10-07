@@ -51,7 +51,7 @@ for l=1:length(prm.diagtype)             %prm.diagtype在diagnostics_init.m中
    set(gcf,'CurrentAxes',hdiag.axes(l)); %	创建笛卡尔坐标系  
    hdiag.nplt = l; % plate number
    
-   type = prm.diagtype(l);
+   type = prm.diagtype(l);%diagtype = [11.000000, 23.000000, 18.000000, 4.000000, ]
    switch type
       case {1,2,3}
          hdiag = plotphs(hdiag, type, jdiag, particle, prm,ren);

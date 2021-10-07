@@ -4,7 +4,7 @@ function hdiag = plotenergy(hdiag, jdiag, eng, prm, ren)
 %
 
 
-ifdiag = prm.ifdiag;
+ifdiag = prm.ifdiag;%4个时间间隔画1个点
 
 
 totaleng = sum(eng);
