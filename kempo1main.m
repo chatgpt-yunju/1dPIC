@@ -28,7 +28,7 @@ jtime=0;
 jdiag=1;
 
 %-- diagnostics --
-hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
+% hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
 
 
 
