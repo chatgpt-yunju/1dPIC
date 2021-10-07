@@ -37,10 +37,18 @@ end
 for jtime = 1:prm.ntime  %？时间间隔dt和总时间步数的选择
     if prm.iex==2  %iex=2静电；iex=1电磁
         rvelocity(particle, field, prm);
-        
-        
+        position(particle, prm);
+        position(particle, prm);  %？两次位置变化？？
+        charge(particle, field, prm);
+        poisson(field, prm);
     else
-        
+        bfield(field,prm);
+        rvelocity(particle, field, prm);
+        position(particle, prm);
+        current(particle, field, jtime, prm);
+        bfield(field, prm);
+        efield(field, prm);
+        position(particle, prm);
     end
 end
 

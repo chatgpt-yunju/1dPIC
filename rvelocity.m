@@ -7,7 +7,7 @@ f = field;
 
 nxp1 = prm.nxp1; nxp2 = prm.nxp2; ns = prm.ns; np = prm.np;
 qm = prm.qm; 
-bx0 = prm.bx0;
+bx0 = prm.bx0;  %bx0=prm.wc/prm.qm(1)*cos(theta);
 cs = prm.cs;
 X1 = prm.X1; X2 = prm.X2; X3 = prm.X3; %Error  %X2=2:(prm.nx+1);X3=3:(prm.nx+2)
 
