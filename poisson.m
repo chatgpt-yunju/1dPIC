@@ -3,7 +3,7 @@ function poisson(field, prm)
 
     f = field; % reference to the Field obj
 
-    f.ex(prm.X2) = f.ex(prm.X2-1) + f.rho(prm.X2);
+    f.ex(prm.X2) = f.ex(prm.X2-1) + f.rho(prm.X2);%？真空介电常熟去哪了？？
 
     ex0 = sum(f.ex(prm.X2))/prm.nx     %平均电场强度
     f.ex(prm.X2) = f.ex(prm.X2) - ex0;  %？
