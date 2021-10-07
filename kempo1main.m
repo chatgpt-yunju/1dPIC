@@ -13,3 +13,12 @@ prm = Parameters
 
 %-- initialization --
 [hdiag,output] = diagnostics_init(prm);
+particle = Particle(prm);
+field = Field(prm);
+%prm = initial(prm, hdiag);
+
+position(particle,prm);
+if prm.iex  %control parameter for electrostatic option
+   charge(particle, field, prm);
+   poisson(field, prm);
+end
