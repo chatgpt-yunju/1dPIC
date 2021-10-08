@@ -156,7 +156,7 @@ classdef Parameters < handle
                   obj.iparam = value;
                case 'diagtype'
 %                   obj.diagtype = value;
-                  obj.diagtype = [1, 4, 5,  10, 11.000000,12,15, 23.000000, 25.000000, 30.000000];
+                  obj.diagtype =  [1, 4, 5,  10, 11.000000,15, 25.000000, 30.000000];
                case 'angle'
                   obj.angle = value;
                otherwise

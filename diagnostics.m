@@ -52,7 +52,7 @@ for l=1:length(prm.diagtype)             %prm.diagtype在diagnostics_init.m中
    hdiag.nplt = l; % plate number
    
    type = prm.diagtype(l);%diagtype = [11.000000, 23.000000, 18.000000, 4.000000, ]
-   switch type   % [1, 4, 5,  10, 11.000000,12,15, 23.000000, 25.000000, 30.000000]
+   switch type   % [1, 4, 5,  10, 11.000000,15, 25.000000, 30.000000]
       case {1,2,3}
          hdiag = plotphs(hdiag, type, jdiag, particle, prm,ren);
       case 4
