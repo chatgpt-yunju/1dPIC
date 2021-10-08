@@ -24,8 +24,7 @@ if jdiag == 1
          n1 = n2+1;
          n2 = n2+prm.np(k);
          n12 = n1:n2;
-         hplot(k) = plot3(vvx(n12),vvy(n12),vvz(n12),'.', ...
-            'color',hdiag.color(mod(k-1,7)+1,:));
+         hplot(k) = plot3(vvx(n12),vvy(n12),vvz(n12),'.', 'color',hdiag.color(mod(k-1,7)+1,:));
          try;set(hplot(k),'DisplayName',sprintf('Sp. %d',k));catch;end;
       end
    else
