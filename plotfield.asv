@@ -1,4 +1,4 @@
-function hdiag = plotfield(hdiag, n, jdiag, field, prm,ren)%修复Error，增加ren参数
+function hdiag = plotfield(hdiag, n, jdiag, field, prm,ren)
 %
 % Field plot (Ex,Ey,Ez,By,Bz)
 %

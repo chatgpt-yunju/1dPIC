@@ -58,7 +58,7 @@ for l=1:length(prm.diagtype)             %prm.diagtype在diagnostics_init.m中
       case 4
          hdiag = plotvs(hdiag,jdiag, particle,prm,ren);
       case {5,6,7,8,9}
-         hdiag = plotfield(hdiag, type-4, jdiag, field, prm);
+         hdiag = plotfield(hdiag, type-4, jdiag, field, prm,ren);%修复Error，增加Ren参数
       case 10
          hdiag = plotwave(hdiag,jdiag,particle,field,prm,ren);
       case 11
