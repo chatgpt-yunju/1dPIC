@@ -9,7 +9,7 @@ global flag_exit;
 
 % reference to class obj
 f = field;
-
+X2=prm.X2
 try
    % pause check
    flag = get(hdiag.fig,'UserData');
@@ -36,7 +36,7 @@ if hdiag.flag_field
    output.fieldsave(:,:,jdiag) = [f.ex, f.ey, f.ez, f.by-prm.by0, f.bz]';
 end
 if hdiag.flag_kspec
-   output.kspecsave(:,:,jdiag) = kspectr([f.ex(X2),f.ey(X2),f.ez(X2),f.by(X2)-f.by0,f.bz(X2)])';
+   output.kspecsave(:,:,jdiag) = kspectr([f.ex(X2),f.ey(X2),f.ez(X2),f.by(X2)-prm.by0,f.bz(X2)],prm)';
 end
 
 
@@ -52,7 +52,7 @@ for l=1:length(prm.diagtype)             %prm.diagtype在diagnostics_init.m中
    hdiag.nplt = l; % plate number
    
    type = prm.diagtype(l);%diagtype = [11.000000, 23.000000, 18.000000, 4.000000, ]
-   switch type
+   switch type   % [1, 4, 5,  10, 11.000000,12,15, 23.000000, 25.000000, 30.000000]
       case {1,2,3}
          hdiag = plotphs(hdiag, type, jdiag, particle, prm,ren);
       case 4
