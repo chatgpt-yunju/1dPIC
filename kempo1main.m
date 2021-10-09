@@ -19,10 +19,10 @@ function kempo1main
     %prm = initial(prm, hdiag);
 
     position(particle,prm);
-%     if prm.iex  %control parameter for electrostatic option
-%        charge(particle, field, prm);
-%        poisson(field, prm);
-%     end
+    if prm.iex  %静电开关：iex=1为电磁，iex=2为静电
+       charge(particle, field, prm);
+       poisson(field, prm);
+    end
 % 
 %     %************main loop***********%
 %     jtime=0;
