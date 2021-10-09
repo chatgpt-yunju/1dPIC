@@ -9,17 +9,17 @@ function [hdiag,output]=diagnostics_init(prm)
     global flag_exit
     flag_exit=0;
 
-    hdiag.flag_rot=0;    %for rotate3d
-    hdiag.flag_field=0;  %0: donothing, 1: save field data
+    hdiag.flag_rot=0;         %for rotate3d
+    hdiag.flag_field=0;       %0: donothing, 1: save field data
     hdiag.flag_eng = 0;       % 0: do nothing, 1: save energy data
     hdiag.flag_kspec = 0;     % 0: do nothing, 1: save k-spectrum data
 
-    %*********Initialization of output vars*********%
+    %*********Initialization of output vars***********%
     output = Output(prm)
 
     %*******************图像初始化**********************%
     hdiag.fig = figure;
-    set(0,'lang','en'); % for English menu
+    set(0,'lang','en');              % for English menu
     set(0,'DefaultAxesFontSize',10);
     set(0,'DefaultAxesFontName','Helvetica');
     colormap jet;
