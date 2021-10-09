@@ -127,7 +127,8 @@ classdef Parameters < handle
                case 'bmax'
                   obj.bmax = value;
                case 'iex'
-                  obj.iex = value;
+%                   obj.iex = value;
+                    obj.iex = 2;
                case 'vmax'
                   obj.vmax = value;
                case 'nv'

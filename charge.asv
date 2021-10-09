@@ -17,7 +17,7 @@ for k=1:prm.ns
    n2 = n1 + prm.np(k);
    for m = (n1+1):n2
       i  = floor(p.x(m) + 2.0);           %每个粒子所在的网格点坐标
-      i1 = i + 1;                         %？这里分配的电荷量是否归一化
+      i1 = i + 1;
       s2 = (p.x(m)+ 2.0 - i)*prm.q(k);    %分到右侧网格点的电荷量,每个粒子所带电荷量相等为-0.0625
       s1 = prm.q(k) - s2;                 %分配到左侧网格点的电荷量
       field.rho(i ) = field.rho(i ) + s1; %累加分配到左侧网格的电荷量
@@ -25,7 +25,7 @@ for k=1:prm.ns
    end
 end
 
-%电荷密度边界条件
+%？
 field.rho(2) = field.rho(2) + field.rho(prm.nxp2) - prm.rho0(2);%?
 field.rho(1) = field.rho(prm.nxp1);
 field.rho(prm.nxp2) = field.rho(2);

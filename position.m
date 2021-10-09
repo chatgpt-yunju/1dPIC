@@ -4,7 +4,7 @@ function particle = position(particle,prm)
 slx = prm.slx
 p = particle
 
-p.x = p.x + p.vx  %？直接加vx？？
-% 周期性边界条件  Periodic BC
+p.x = p.x + p.vx  %更新半个时间步的位置(注：一个时间步为2，半个时间步为1)
+% 周期性边界条件：保证粒子在网格内  Periodic BC
 p.x = p.x + slx.*(p.x<0.0) - slx.*(p.x>=slx)
 end
