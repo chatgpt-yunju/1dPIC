@@ -19,7 +19,7 @@ vvz = vz*ren.v;
 xx  = x*ren.x;
 
 eey = ey(X2)*ren.e;
-eez = ez(X2)*re n.e;
+eez = ez(X2)*ren.e;
 bby = (by(X2)-by0)*ren.b;
 bbz = bz(X2)*ren.b;
 

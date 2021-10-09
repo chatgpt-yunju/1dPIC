@@ -26,12 +26,12 @@ classdef Particle < handle
                vdpe = prm.vd(k)*sin(phi); %漂移速度的垂直分量
             
                xx = 0;
-               nphase = 1; %？ 
+               nphase = 1;
                phase = 0;
             
                %对每一个粒子进行操作
                for i=(n1+1):n2
-                   if mod(i,nphase) == 0            
+                   if mod(i,nphase) == 0   
                       phase = 2*pi*rand;            %随机粒子的相位
                       xx = xx+ prm.nx/prm.np(k);    %等间距分配每一个粒子
                    else
@@ -46,9 +46,9 @@ classdef Particle < handle
                       obj.x(i) = obj.x(i) - prm.slx;%保证粒子坐标在网格内
                    end
 
-                   uxi = prm.vpa(k)*randn + vdpa;           %平行热速度+平行漂移速度             
-                   uyi = prm.vpe(k)*randn + vdpe*cos(phase);%垂直热速度的y分量+平行漂移速度的y分量    
-                   uz  = prm.vpe(k)*randn + vdpe*sin(phase);%垂直热速度的z分量+平行漂移速度的z分量  
+                   uxi = prm.vpa(k)*randn + vdpa;           %第i个粒子速度的平行分量+漂移速度的平行分量             
+                   uyi = prm.vpe(k)*randn + vdpe*cos(phase);  
+                   uz  = prm.vpe(k)*randn + vdpe*sin(phase);
 
                    % rotation to the direction of the magnetic field
                    % 磁场对速度的转向
