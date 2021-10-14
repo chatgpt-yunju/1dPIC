@@ -15,32 +15,32 @@ function kempo1main
 
     %********initialization*********%
     [hdiag,output] = diagnostics_init(prm);
-    particle = Particle(prm);
-    field = Field(prm);
+    particle = Particle(prm)
+    field = Field(prm)
     %prm = initial(prm, hdiag);
 
-    position(particle,prm);
+    position(particle,prm)
     if prm.iex  %静电开关：iex=1为电磁，iex=2为静电
-       charge(particle, field, prm);
-       poisson(field, prm);
+       charge(particle, field, prm)
+       poisson(field, prm)
     end
 
     %************main loop***********%
     jtime=0;
-    jdiag=1;  %诊断计数
+    jdiag=1;  %保存不同时刻的画图数据，每次循环自加1
 
-    %-- Diagnostics at initial time --
+    %-- Diagnostics at initial time显示粒子的初始图像信息 --
     hdiag=diagnostics(hdiag,particle,field,output,prm,jtime,jdiag,ren);
     if prm.nplot == 0  %nplot: number of output
        return
     end
 
     % Time advance loop
-    for jtime = 1:prm.ntime  %？时间间隔dt和总时间步数的选择
+    for jtime = 1:prm.ntime  
         if prm.iex==2  %iex=2静电；iex=1电磁
             rvelocity(particle, field, prm);
             position(particle, prm);
-            position(particle, prm);  %？两次位置变化？？
+            position(particle, prm);      %？两次位置变化？？ 每次更新半个时间步位置
             charge(particle, field, prm);
             poisson(field, prm);
         else

@@ -27,6 +27,7 @@ for k=1:ns
       s1 = q(k) - s2;
       ih1= ih+1;
       
+      %jy和jz，按线性比例分配
       f.ajy(ih)  = f.ajy(ih)  + p.vy(m)*s1;
       f.ajy(ih1) = f.ajy(ih1) + p.vy(m)*s2;
       
