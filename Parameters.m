@@ -150,7 +150,8 @@ classdef Parameters < handle
                case 'vd'
                   obj.vd = value;
                case 'pch'
-                  obj.pch = value;
+%                   obj.pch = value;
+                  obj.pch = 0;
                case 'icolor'
                   obj.icolor = value;
                case 'iparam'
